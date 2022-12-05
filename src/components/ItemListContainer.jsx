@@ -6,12 +6,12 @@ import data from '../utils/data.js';
 
 const ItemListContainer = () => {
     const [datos, setDatos] = useState([]);
-    const { idCategory } = useParams();
-    console.log(idCategory);
+    const { categoryID } = useParams();
+    console.log(categoryID);
     //componentDidMount
     useEffect(() => {
-        if (idCategory) {
-            fetchData(2000, data.filter(item => item.categoryID === parseInt(idCategory)))
+        if (categoryID) {
+            fetchData(2000, data.filter(item => item.categoryID === parseInt(categoryID)))
             .then(result => setDatos(result))
             .catch(err => console.log(err))
         } else {
@@ -19,7 +19,7 @@ const ItemListContainer = () => {
             .then(result => setDatos(result))
             .catch(err => console.log(err))
         }
-    }, [idCategory]);
+    }, [categoryID]);
 
     return (
             <ItemList item={datos}/>
