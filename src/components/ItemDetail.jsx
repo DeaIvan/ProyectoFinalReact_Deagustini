@@ -4,9 +4,20 @@ const ItemDetail = ({ item }) => {
     return (
         <>
         {
-        item.length > 0
-        ? item.map(item => <ItemD key={item.id} id={item.id} title={item.title} price={item.price} image={item.image[0]} stock={item.stock} description={item.description}/>)
-        : <p className="load">Cargando...</p>
+        item && item.image
+        ?
+        <div className="product-container">
+            <div className="product-img">
+                <img src={item.image} alt="" />
+            </div>
+            <div className="product-info">
+                <h3 id="title">{item.title}</h3>
+                <p id="price">Precio: ${item.price}</p>
+                <p id="stock">Stock: {item.stock}</p>
+                <p id="desc">Descripcion: {item.description}</p>
+            </div>
+        </div>
+        : <p className='load'>Cargando...</p>
         }
         </>
     );
