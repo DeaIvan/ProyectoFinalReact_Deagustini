@@ -1,4 +1,5 @@
 import '../App.css';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({ item }) => {
     return (
@@ -6,15 +7,18 @@ const ItemDetail = ({ item }) => {
         {
         item && item.image
         ?
-        <div className="product-container">
-            <div className="product-img">
+        <div className="product-container-detail">
+            <div className="product-img-detail">
                 <img src={item.image} alt="" />
             </div>
-            <div className="product-info">
-                <h3 id="title">{item.title}</h3>
-                <p id="price">Precio: ${item.price}</p>
-                <p id="stock">Stock: {item.stock}</p>
-                <p id="desc">Descripcion: {item.description}</p>
+            <div className="product-info-detail">
+                <h3 id="title-detail">{item.title}</h3>
+                <p id="price-detail">Precio: ${item.price}</p>
+                <p id="stock-detail">Stock: {item.stock}</p>
+                <p id="desc-detail">Descripcion: {item.description}</p>
+                <div className="product-detalle-detail">
+                    <Link to='/'><button>Agregar al Carrito</button></Link>
+                </div>
             </div>
         </div>
         : <p className='load'>Cargando...</p>
