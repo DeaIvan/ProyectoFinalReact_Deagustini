@@ -8,12 +8,17 @@ const ItemDetailContainer = () => {
     const [dato, setDato] = useState([]);
     const { idItem } = useParams();
 
-    //componentDidMount
     useEffect(() => {
-        fetchData(2000, data.find(item => item.id === parseInt(idItem)))
-        .then(result => setDato(result))
-        .catch(err => console.log(err))
-    }, [])
+        if (idItem) {
+            fetchData(2000, data.filter(item => item.id === parseInt(idItem)))
+            .then(result => setDato(result))
+            .catch(err => console.log(err))
+        } else {
+            fetchData(2000, data)
+            .then(result => setDato(result))
+            .catch(err => console.log(err))
+        }
+    }, [idItem]);
 
     return (
             <ItemDetail item={dato}/>
