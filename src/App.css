@@ -367,7 +367,7 @@ nav ul li a:hover {
   transition: all 0.5s;
 }
 
-.product-detalle-detail button{
+.product-detalle-detail .addCart{
   font-size: 2rem;
   text-align: center;
   width: 200px;
@@ -375,9 +375,96 @@ nav ul li a:hover {
   border: none;
   background-color: #800e13;
   color: #ffc400;
-  border-radius: 0px 0px 10px 10px;
+  cursor: pointer;
 }
 
 .product-detalle-detail button:hover{
   background-color: #111;
+}
+
+.buttons{
+  display: flex;
+  gap: 25px;
+  margin-top: 100px;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+
+
+.buttonsAdd{
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  text-align: center;
+  border: none;
+  background-color: #1d800e;
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+.container .cart-title{
+  font-size: 60px;
+  text-align: center;
+}
+
+.container .cart-top{
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.container .cart-top .buttonShopping{
+  border: none;
+  color: #800e13;
+  background-color: #ffc40050;
+  padding: 10px;
+}
+
+.container .cart-top .buttonShopping:hover{
+  color: #ffc400;
+  background-color: #800e13;
+  padding: 10px;
+}
+
+.container .cart-top .buttonDelete{
+  border: none;
+  color: #800e13;
+  background-color: #ffc40050;
+  padding: 10px;
+}
+
+.container .cart-top .buttonDelete:hover{
+  color: #ffc400;
+  background-color: #800e13;
+  padding: 10px;
+}
+
+.container .cart-top p{
+  color: #800e13;
+}
+
+.content-cart{
+  width: 100%;
+  height: 500px;
+  background-color: #ffc40050;
+}
+
+.content-cart-detail{
+  width: 50%;
+  height: 300px;
+  background-color: #ffc400;
+}
+
+.content-cart-detail .product-content{
+  width: 50%;
+  height: 100px;
+  background-color: #800e13;
+}
+
+.content-cart-detail .product-detail{
+  width: 50%;
+  height: 200px;
+  background-color: #1d800e;
 }

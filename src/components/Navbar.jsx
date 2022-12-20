@@ -13,7 +13,7 @@ function Navbar(){
             <li><Link to="/category/66">Remeras</Link></li>
             <li><Link to="/category/99">Pantalones</Link></li>
         </ul>
-        <CartWidget/>
+        <Link to="/cart"><CartWidget/></Link>
     </nav>
   )
 }

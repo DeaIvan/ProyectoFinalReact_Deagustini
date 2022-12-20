@@ -4,7 +4,7 @@ function Footer(){
   return (
       <div className="content-footer">
         <div className='content-copy'>
-            <a className="logo" href="index.html">
+            <a className="logo" href="#">
                 URBANSTY.<span>LE</span>
             </a>
             <span>© Todos los derechos reservados 2022</span>

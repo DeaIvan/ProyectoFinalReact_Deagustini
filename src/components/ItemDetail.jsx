@@ -1,7 +1,18 @@
 import '../App.css';
 import { Link } from 'react-router-dom';
+import ItemCount from './ItemCount';
+import { useContext, useState } from 'react';
+import { CartContext } from '../context/CartContext';
 
 const ItemDetail = ({ item }) => {
+    const [itemCount, setItemCount] = useState(0);
+    const {addToCart} = useContext(CartContext);
+
+    const onAdd = (qty) => {
+        alert("You have selected " + qty + " items.");
+        setItemCount(qty);
+        addToCart(item, qty);
+    }
     return (
         <>
         {
@@ -17,7 +28,11 @@ const ItemDetail = ({ item }) => {
                 <p id="stock-detail">Stock: {item.stock}</p>
                 <p id="desc-detail">Descripcion: {item.description}</p>
                 <div className="product-detalle-detail">
-                    <Link to='/'><button>Agregar al Carrito</button></Link>
+                {
+                    itemCount === 0
+                    ? <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} />
+                    : <Link to='/cart' style={{textDecoration: "none"}}><Button variant="contained" color="secondary">Ir al carrito</Button></Link>
+                }
                 </div>
             </div>
         </div>
